@@ -16,14 +16,26 @@ struct ContentView: View {
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             ).ignoresSafeArea()
-            VStack {
+            VStack(spacing: 10) {
                 // 修饰器的顺序影响渲染结果，比如background在frame前修饰文字，在之后修饰frame。
                 Text("济南，槐荫区")
-                    .font(.system(size: 32,weight: .medium,design: .default))
+                    .font(.system(size: 32, weight: .medium, design: .default))
                     .foregroundStyle(.white)
-                    .frame(width: 200, height: 200)
-                    .background(.red)
+                    .padding()
+                VStack{
+                    Image(systemName: "cloud.sun.fill")
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 180, height: 180)
+                }
+                Text("26°C")
+                    .font(.system(size: 70, weight: .medium))
+                    .foregroundStyle(.white)
+                Spacer()
             }
+            
+            
         }
     }
 }

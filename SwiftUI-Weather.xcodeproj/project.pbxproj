@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2A98B7EE2ED34B900062E9E6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2A98B7ED2ED34B900062E9E6 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2A98B7D42ED343280062E9E6 /* SwiftUI-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A98B7ED2ED34B900062E9E6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		2A98B7CB2ED343280062E9E6 = {
 			isa = PBXGroup;
 			children = (
+				2A98B7ED2ED34B900062E9E6 /* README.md */,
 				2A98B7D62ED343280062E9E6 /* SwiftUI-Weather */,
 				2A98B7D52ED343280062E9E6 /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A98B7EE2ED34B900062E9E6 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
