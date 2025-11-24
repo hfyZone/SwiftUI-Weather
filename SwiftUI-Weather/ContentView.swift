@@ -44,6 +44,17 @@ struct ContentView: View {
                 }
                 Spacer()
                 
+                Button{
+                   print("123")
+                } label: {
+                    Text("修改地点")
+                        .frame(width: 280, height: 50)
+                        .background(Color.white)
+                        .font(.system(size: 20, weight: .bold))
+                        .cornerRadius(10)
+                }
+                
+                Spacer()
             }
         }
     }
