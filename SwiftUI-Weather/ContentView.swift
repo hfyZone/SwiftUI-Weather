@@ -59,7 +59,7 @@ struct ContentView: View {
                     isNight.toggle()
                 } label: {
                     WeatherButton(
-                        title: "修改地点",
+                        title: "昼夜切换",
                         textColor: .blue,
                         backgroundColor: .white
                     )
@@ -80,14 +80,18 @@ struct BackgroundView: View {
 
     var body: some View {
         // 添加线性颜色背景
-        LinearGradient(
-            gradient: Gradient(colors: [
-                isNight ? .gray : .blue,
-                Color("LightBlue"),
-            ]),
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        ).ignoresSafeArea()
+//        LinearGradient(
+//            gradient: Gradient(colors: [
+//                isNight ? .gray : .blue,
+//                Color("LightBlue"),
+//            ]),
+//            startPoint: .topLeading,
+//            endPoint: .bottomTrailing
+//        ).ignoresSafeArea()
+        // ios16方案：简单的渐变实现
+        ContainerRelativeShape()
+            .fill(isNight ? Color.gray.gradient :Color.blue.gradient)
+            .ignoresSafeArea()
     }
 }
 
