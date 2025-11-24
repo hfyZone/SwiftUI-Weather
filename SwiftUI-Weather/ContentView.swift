@@ -13,9 +13,9 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            BackgroundView(isNight: $isNight)
+            BackgroundView(isNight: isNight)
             VStack {
-                CityTextView(cityNmae: "济南，槐荫区")
+                CityTextView(cityName: "济南，槐荫区")
                 MainWeatherView(
                     imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill",
                     temperature: 26
@@ -75,6 +75,22 @@ struct ContentView: View {
     ContentView()
 }
 
+struct BackgroundView: View {
+    var isNight: Bool
+
+    var body: some View {
+        // 添加线性颜色背景
+        LinearGradient(
+            gradient: Gradient(colors: [
+                isNight ? .gray : .blue,
+                Color("LightBlue"),
+            ]),
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        ).ignoresSafeArea()
+    }
+}
+
 struct WeatherDayView: View {
     var dayOfWeek: String
     var imageName: String
@@ -99,28 +115,14 @@ struct WeatherDayView: View {
 
 }
 
-struct BackgroundView: View {
-    @Binding var isNight: Bool
 
-    var body: some View {
-        // 添加线性颜色背景
-        LinearGradient(
-            gradient: Gradient(colors: [
-                isNight ? .gray : .blue,
-                Color("LightBlue"),
-            ]),
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        ).ignoresSafeArea()
-    }
-}
 
 struct CityTextView: View {
-    var cityNmae: String
+    var cityName: String
 
     var body: some View {
         // 修饰器的顺序影响渲染结果，比如background在frame前修饰文字，在之后修饰frame。
-        Text(cityNmae)
+        Text(cityName)
             .font(.system(size: 32, weight: .medium, design: .default))
             .foregroundStyle(.white)
             .padding()
